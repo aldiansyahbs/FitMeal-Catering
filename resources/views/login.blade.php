@@ -70,12 +70,17 @@
 <body>
     <div class="container">
         <h1>Login</h1>
-        <form action="/login" method="POST">
+        @if(Session::has('error'))
+            <div class="alert alert-danger">
+                {{ Session::get('error') }}
+            </div>
+        @endif
+        <form action="{{ route('actionlogin') }}" method="post">
             @csrf
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" class="form-control" placeholder="Email" required="">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
+            <input type="password" name="password" class="form-control" placeholder="Password" required="">
             <button type="submit">Login</button>
         </form>
     </div>
