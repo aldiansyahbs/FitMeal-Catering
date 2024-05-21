@@ -196,7 +196,7 @@
 
         .miniCard {
             width: 300px;
-            height: 400px;
+            height: 500px;
             background-color: white;
             border-radius: 16px;
             border: 4px solid black;
@@ -297,6 +297,13 @@
             flex: 1 1 calc(33.333% - 40px);
             box-sizing: border-box;
         }
+
+        .Catering .miniCard button {
+            width: 200px;
+            margin: 0px 50px;
+            padding: 12px 0;
+            font-size: 16px;
+        }
     </style>
 
 </head>
@@ -319,77 +326,23 @@
     <h2><u>Pilih CateringMu!</u> </h2>
 
     <div class="Catering">
-        <div class="miniCard">
+        <div class="miniCard" data-product-id="1">
             <img src="https://source.unsplash.com/250x200/?food" alt="">
             <h1>Catering Ahja</h1>
             <div class="details">
                 <p>TulungAgung</p>
                 <p>Rating: 4.5</p>
             </div>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
-        <div class="miniCard">
+        <div class="miniCard" data-product-id="2">
             <img src="https://source.unsplash.com/250x200/?food" alt="">
-            <h1>Catering Ahja</h1>
+            <h1>Catering Bintang</h1>
             <div class="details">
-                <p>TulungAgung</p>
-                <p>Rating: 4.5</p>
+                <p>Surabaya</p>
+                <p>Rating: 4.7</p>
             </div>
-        </div>
-        <div class="miniCard">
-            <img src="https://source.unsplash.com/250x200/?food" alt="">
-            <h1>Catering Ahja</h1>
-            <div class="details">
-                <p>TulungAgung</p>
-                <p>Rating: 4.5</p>
-            </div>
-        </div>
-        <div class="miniCard">
-            <img src="https://source.unsplash.com/250x200/?food" alt="">
-            <h1>Catering Ahja</h1>
-            <div class="details">
-                <p>TulungAgung</p>
-                <p>Rating: 4.5</p>
-            </div>
-        </div>
-        <div class="miniCard">
-            <img src="https://source.unsplash.com/250x200/?food" alt="">
-            <h1>Catering Ahja</h1>
-            <div class="details">
-                <p>TulungAgung</p>
-                <p>Rating: 4.5</p>
-            </div>
-        </div>
-        <div class="miniCard">
-            <img src="https://source.unsplash.com/250x200/?food" alt="">
-            <h1>Catering Ahja</h1>
-            <div class="details">
-                <p>TulungAgung</p>
-                <p>Rating: 4.5</p>
-            </div>
-        </div>
-        <div class="miniCard">
-            <img src="https://source.unsplash.com/250x200/?food" alt="">
-            <h1>Catering Ahja</h1>
-            <div class="details">
-                <p>TulungAgung</p>
-                <p>Rating: 4.5</p>
-            </div>
-        </div>
-        <div class="miniCard">
-            <img src="https://source.unsplash.com/250x200/?food" alt="">
-            <h1>Catering Ahja</h1>
-            <div class="details">
-                <p>TulungAgung</p>
-                <p>Rating: 4.5</p>
-            </div>
-        </div>
-        <div class="miniCard">
-            <img src="https://source.unsplash.com/250x200/?food" alt="">
-            <h1>Catering Ahja</h1>
-            <div class="details">
-                <p>TulungAgung</p>
-                <p>Rating: 4.5</p>
-            </div>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
     </div>
 
@@ -434,6 +387,47 @@
             <p>© 2021 YukMam! All Rights Reserved</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.add-to-cart');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const miniCard = this.closest('.miniCard');
+                    const productId = miniCard.getAttribute('data-product-id');
+                    const userId = 1; // This should be dynamically set based on the logged-in user
+                    const quantity =
+                        1; // Default quantity to 1, this could be dynamically set based on user input
+
+                    const data = {
+                        user_id: userId,
+                        catering_id: productId,
+                        quantity: quantity,
+                        total_price: 100
+                    };
+
+                    fetch('/add-to-cart', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                            },
+                            body: JSON.stringify(data)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Item added to cart successfully!');
+                            } else {
+                                alert('Failed to add item to cart.');
+                            }
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
