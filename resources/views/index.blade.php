@@ -287,9 +287,9 @@
             <p><b>YukMam!</b></p>
         </a>
         <ul class="navbar-menu">
-            <li class="navbar-item"><a href="/menu">Home</a></li>
-            <li class="navbar-item"><a href="/about">Catering</a></li>
-            <li class="navbar-item"><a href="/contact">Reward</a></li>
+            <li class="navbar-item"><a href="/">Home</a></li>
+            <li class="navbar-item"><a href="/catering">Catering</a></li>
+            <li class="navbar-item"><a href="/reward">Reward</a></li>
             <li><a href="{{route('actionlogout')}}"><i class="fa fa-power-off"></i> Log Out</a></li>
         </ul>
         <p>Profile</p>
