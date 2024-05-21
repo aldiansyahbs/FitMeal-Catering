@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         body {
             font-family: 'Lexend', sans-serif;
@@ -394,36 +395,32 @@
                 button.addEventListener('click', function() {
                     const miniCard = this.closest('.miniCard');
                     const productId = miniCard.getAttribute('data-product-id');
-                    const userId = 1; // This should be dynamically set based on the logged-in user
-                    const quantity =
-                        1; // Default quantity to 1, this could be dynamically set based on user input
+                    const quantity = 1;
 
                     const data = {
-                        user_id: userId,
-                        catering_id: productId,
-                        quantity: quantity,
-                        total_price: 100
+                        id_menu: productId,
+                        kuantitas: quantity
                     };
 
                     fetch('/add-to-cart', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                            },
-                            body: JSON.stringify(data)
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.success) {
-                                alert('Item added to cart successfully!');
-                            } else {
-                                alert('Failed to add item to cart.');
-                            }
-                        })
-                        .catch((error) => {
-                            console.error('Error:', error);
-                        });
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Item added to cart successfully!');
+                        } else {
+                            alert('Failed to add item to cart.');
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
                 });
             });
         });

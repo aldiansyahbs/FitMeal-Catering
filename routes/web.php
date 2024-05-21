@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CartController;
 
 Route::get('/catering', function () {
     return view('catering');
@@ -37,3 +38,6 @@ Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actio
 
 Route::get('/index', [HomeController::class, 'index'])->name('index')->middleware('auth');
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
+
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->middleware('auth');
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
