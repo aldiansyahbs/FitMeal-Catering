@@ -20,7 +20,6 @@ Route::get('/review', function () {
     return view('review');
 });
 
-<<<<<<< Updated upstream
 Route::get('/login', function () {
     return view('login');
 });
@@ -28,10 +27,8 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-=======
 Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 
 Route::get('/index', [HomeController::class, 'index'])->name('index')->middleware('auth');
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
->>>>>>> Stashed changes
