@@ -42,6 +42,7 @@
         .navbar-menu {
             list-style: none;
             display: flex;
+            justifyx-content: space-between;
             margin: 0;
             padding: 0;
         }
@@ -69,7 +70,8 @@
             width: 625px;
             height: 411px;
             margin-left: 69px;
-            margin-top: 250px;
+            /* margin-top: 250px; */
+            text-align: left;
         }
 
         button {
@@ -194,13 +196,88 @@
 
         .miniCard {
             width: 300px;
-            height: 300px;
+            height: 400px;
             background-color: white;
             border-radius: 16px;
-            margin: 12px 64px;
             border: 4px solid black;
         }
+
+        .miniCard img {
+            width: 250px;
+            height: 200px;
+            margin: 20px 27px;
+            /* margin: 0 2px; */
+        }
+
+        .miniCard h1 {
+            margin: 20px 50px;
+            font-size: 24px;
+        }
+
+        .miniCard .details {
+            margin: 20px 50px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: normal;
+            color: #7C7C7C;
+        }
+
+        .miniCardHero {
+            width: 530px;
+            height: 636px;
+            background-color: white;
+            border-radius: 16px;
+            margin: 12px 12px;
+            border: 4px solid black;
+        }
+
+        .miniCardHero img {
+            width: 467px;
+            height: 438px;
+            margin: 20px 27px;
+            /* margin: 0 2px; */
+        }
+
+        .miniCardHero h1 {
+            margin: 20px 50px;
+            font-size: 24px;
+        }
+
+        .miniCardHero .details {
+            margin: 20px 50px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: normal;
+            color: #7C7C7C;
+        }
+
+        .HeroItem {
+            display: flex;
+            margin-top: 250px;
+        }
+
+        .HeroItem .miniCard {
+            margin: 0px 20px;
+        }
+
+        .catering {
+            display: flex;
+            justify-content: center;
+            margin: 20px 20px 0px;
+
+        }
+
+        .catering .miniCard {
+            margin: 250px 20px 0px;
+        }
+
+        .HeroItem .minicard1 {
+            margin-top: 114px;
+        }
     </style>
+
 </head>
 
 <body>
@@ -217,10 +294,32 @@
         </ul>
         <p>Profile</p>
     </nav>
-    <div class="heroText">
-        <p>Mulai <b>Hidup Sehatmu</b> Dengan Makan <b>Makanan Yang Bergizi!</b></p>
-        <button><b>Pesan Sekarang</b> </button>
+    <div class="HeroItem">
+        <div class="heroText">
+            <p>Mulai <b>Hidup Sehatmu</b> Dengan Makan <b>Makanan Yang Bergizi!</b></p>
+            <button><b>Pesan Sekarang</b> </button>
+        </div>
+        <div class="miniCard">
+            <img src="{{ asset('Assets/food_1.png') }}" alt="">
+            <h1>Catering Bison</h1>
+            <div class="details">
+                <p>Tidar Atas</p>
+                <p>rating</p>
+            </div>
+        </div>
+        <div class="minicard1">
+            <div class="miniCard">
+                <img src="{{ asset('Assets/food_1.png') }}" alt="">
+                <h1>Catering Bison</h1>
+                <div class="details">
+                    <p>Tidar Atas</p>
+                    <p>rating</p>
+                </div>
+            </div>
+        </div>
+
     </div>
+
     <div class="sectionCatering">
         <p><b>Catering paling laris di yukMam!</b></p>
     </div>
@@ -228,8 +327,35 @@
         <button><b>Lihat Lebih Banyak!</b> </button>
     </div>
 
-    <div class="miniCard">
-        <p>alkdjsaslkdaskjd</p>
+    <div class="catering">
+        <div class="miniCardHero">
+            <img src="{{ asset('Assets/food_1.png') }}" alt="">
+            <h1>Catering Bison</h1>
+            <div class="details">
+                <p>Tidar Atas</p>
+                <p>rating</p>
+            </div>
+
+        </div>
+        <div class="miniCard">
+            <img src="{{ asset('Assets/food_1.png') }}" alt="">
+            <h1>Catering Bison</h1>
+            <div class="details">
+                <p>Tidar Atas</p>
+                <p>rating</p>
+            </div>
+
+        </div>
+
+        <div class="miniCard">
+            <img src="{{ asset('Assets/food_1.png') }}" alt="">
+            <h1>Catering Bison</h1>
+            <div class="details">
+                <p>Tidar Atas</p>
+                <p>rating</p>
+            </div>
+
+        </div>
     </div>
 
     <div class="Banner">
