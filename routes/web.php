@@ -17,3 +17,11 @@ Route::get('/profile', function () {
 Route::get('/reward', function () {
     return view('reward');
 });
+
+Route::get('/review', function () {
+    return view('review');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
