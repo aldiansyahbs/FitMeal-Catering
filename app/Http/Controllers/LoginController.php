@@ -29,14 +29,13 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended('index');
         } else {
-            Session::flash('error', 'Email atau Password Salah');
-            return redirect('/');
+            return redirect()->route('login')->with('error', 'Email atau Password Salah');
         }
     }
 
     public function actionlogout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/login');
     }
 }

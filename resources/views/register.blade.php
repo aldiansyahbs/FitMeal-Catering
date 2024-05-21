@@ -71,7 +71,12 @@
 <body>
     <div class="container">
         <h1>Register</h1>
-        <form action="/register" method="POST">
+        @if(session('message'))
+            <div class="alert alert-success">
+                {{session('message')}}
+            </div>
+            @endif
+        <form action="{{route('actionregister')}}" method="POST">
             @csrf
             <label for="name">Full Name</label>
             <input type="text" name="name" id="name" required>
@@ -82,6 +87,7 @@
             <label for="confirm_password">Confirm Password</label>
             <input type="password" name="confirm_password" id="confirm_password" required>
             <button type="submit">Register</button>
+            <p class="text-center">Sudah punya akun? <a href="/login">Login</a> lah yakali ga login!</p>
         </form>
     </div>
 </body>
