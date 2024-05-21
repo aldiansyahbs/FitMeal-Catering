@@ -65,6 +65,14 @@
             color: black;
         }
 
+        .heroText {
+            font-size: 64px;
+            width: 625px;
+            height: 411px;
+            margin-left: 69px;
+            /* margin-top: 250px; */
+            text-align: left;
+        }
 
         button {
             background-color: #DAFD3C;
@@ -85,7 +93,58 @@
             /* Slightly darker green on hover */
         }
 
+        .sectionCatering {
+            font-size: 64px;
+            /* margin-left: 250px; */
+            margin-top: 150px;
+            justify-content: center;
+            display: flex;
+        }
 
+        .ButtonCatering {
+            margin-top: 50px;
+            justify-content: right;
+            margin-right: 64px;
+            display: flex;
+        }
+
+        .Banner {
+            background-color: #DAFD3C;
+            /* width: 1312px;*/
+            height: 259px;
+            border-radius: 16px;
+            display: flex;
+            margin: 12px 64px;
+        }
+
+        .Banner .Logo {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin-left: 42px;
+            margin-right: 70px;
+        }
+
+        .vertical-line {
+            border-left: 4px solid black;
+            height: 200px;
+            margin: 20px;
+        }
+
+        .right-section {
+            width: 416px;
+            height: 180px;
+            font-size: 27px;
+            margin-left: 70px;
+        }
+
+        .right-section button {
+            background-color: black;
+            color: #DAFD3C;
+            width: 200px;
+            font-size: 16px;
+            padding: 12px 0;
+        }
 
         footer {
             background-color: black;
@@ -135,14 +194,108 @@
             padding: 50px 0;
         }
 
-        .information {
-            margin: auto 50px;
-            width: 1250px;
+        .miniCard {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border-radius: 16px;
+            border: 4px solid black;
         }
 
-        .details-information {
+        .miniCard img {
+            width: 250px;
+            height: 200px;
+            margin: 20px 27px;
+            /* margin: 0 2px; */
+        }
+
+        .miniCard h1 {
+            margin: 20px 50px;
+            font-size: 24px;
+        }
+
+        .miniCard .details {
+            margin: 20px 50px;
+            font-size: 12px;
             display: flex;
             justify-content: space-between;
+            font-weight: normal;
+            color: #7C7C7C;
+        }
+
+        .miniCardHero {
+            width: 530px;
+            height: 636px;
+            background-color: white;
+            border-radius: 16px;
+            margin: 12px 12px;
+            border: 4px solid black;
+        }
+
+        .miniCardHero img {
+            width: 467px;
+            height: 438px;
+            margin: 20px 27px;
+            /* margin: 0 2px; */
+            display: flex;
+            justify-content: center;
+        }
+
+        .miniCardHero h1 {
+            margin: 20px 50px;
+            font-size: 24px;
+        }
+
+        .miniCardHero .details {
+            margin: 20px 50px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: normal;
+            color: #7C7C7C;
+        }
+
+        .HeroItem {
+            display: flex;
+            margin-top: 250px;
+        }
+
+        .HeroItem .miniCard {
+            margin: 0px 20px;
+        }
+
+        .catering {
+            display: flex;
+            justify-content: center;
+            margin: 20px 20px 0px;
+
+        }
+
+        .catering .miniCard {
+            margin: 250px 20px 0px;
+        }
+
+        .HeroItem .minicard1 {
+            margin-top: 114px;
+        }
+
+        h2 {
+            margin-left: 64px;
+            margin-top: 100px;
+            font-size: 64px;
+        }
+
+        .Catering {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 200px 0px;
+        }
+
+        .Catering .miniCard {
+            margin: 20px;
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
         }
     </style>
 
@@ -163,29 +316,94 @@
         <p>Profile</p>
     </nav>
 
+    <h2><u>Pilih CateringMu!</u> </h2>
 
-    <div class="information">
-        <h1>Informasi Pribadi</h1>
-        <div class="details-information">
-            <div class="leftsection">
-                <h2>username</h2>
-                <input type="text">
-                <h2>Email</h2>
-                <input type="text">
-                <h2>Tempat Tinggal</h2>
-                <input type="text">
+    <div class="Catering">
+        <div class="miniCard">
+            <img src="https://source.unsplash.com/250x200/?food" alt="">
+            <h1>Catering Ahja</h1>
+            <div class="details">
+                <p>TulungAgung</p>
+                <p>Rating: 4.5</p>
             </div>
-            <div class="rightsection">
-                <h2>Umur</h2>
-                <input type="text">
-                <h2>Berat Badan</h2>
-                <input type="text">
-                <h2>Tinggi Badan</h2>
-                <input type="text">
+        </div>
+        <div class="miniCard">
+            <img src="https://source.unsplash.com/250x200/?food" alt="">
+            <h1>Catering Ahja</h1>
+            <div class="details">
+                <p>TulungAgung</p>
+                <p>Rating: 4.5</p>
             </div>
-
+        </div>
+        <div class="miniCard">
+            <img src="https://source.unsplash.com/250x200/?food" alt="">
+            <h1>Catering Ahja</h1>
+            <div class="details">
+                <p>TulungAgung</p>
+                <p>Rating: 4.5</p>
+            </div>
+        </div>
+        <div class="miniCard">
+            <img src="https://source.unsplash.com/250x200/?food" alt="">
+            <h1>Catering Ahja</h1>
+            <div class="details">
+                <p>TulungAgung</p>
+                <p>Rating: 4.5</p>
+            </div>
+        </div>
+        <div class="miniCard">
+            <img src="https://source.unsplash.com/250x200/?food" alt="">
+            <h1>Catering Ahja</h1>
+            <div class="details">
+                <p>TulungAgung</p>
+                <p>Rating: 4.5</p>
+            </div>
+        </div>
+        <div class="miniCard">
+            <img src="https://source.unsplash.com/250x200/?food" alt="">
+            <h1>Catering Ahja</h1>
+            <div class="details">
+                <p>TulungAgung</p>
+                <p>Rating: 4.5</p>
+            </div>
+        </div>
+        <div class="miniCard">
+            <img src="https://source.unsplash.com/250x200/?food" alt="">
+            <h1>Catering Ahja</h1>
+            <div class="details">
+                <p>TulungAgung</p>
+                <p>Rating: 4.5</p>
+            </div>
+        </div>
+        <div class="miniCard">
+            <img src="https://source.unsplash.com/250x200/?food" alt="">
+            <h1>Catering Ahja</h1>
+            <div class="details">
+                <p>TulungAgung</p>
+                <p>Rating: 4.5</p>
+            </div>
+        </div>
+        <div class="miniCard">
+            <img src="https://source.unsplash.com/250x200/?food" alt="">
+            <h1>Catering Ahja</h1>
+            <div class="details">
+                <p>TulungAgung</p>
+                <p>Rating: 4.5</p>
+            </div>
         </div>
     </div>
+
+    <div class="Banner">
+        <div class="Logo">
+            <p><b>YukMam!</b></p>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="right-section">
+            <p><b>Unggah Foto Makananmu, Ambil Kupon Makanan Gratismu!</b></p>
+            <button>Unggah Sekarang</button>
+        </div>
+    </div>
+
     <footer>
         <div class="top">
             <div class="section1">

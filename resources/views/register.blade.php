@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Register</title>
     <style>
         body {
             display: flex;
@@ -41,6 +41,7 @@
             font-weight: bold;
         }
 
+        input[type="text"],
         input[type="email"],
         input[type="password"] {
             margin-bottom: 20px;
@@ -69,14 +70,18 @@
 
 <body>
     <div class="container">
-        <h1>Login</h1>
-        <form action="/login" method="POST">
+        <h1>Register</h1>
+        <form action="/register" method="POST">
             @csrf
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" required>
             <label for="email">Email</label>
             <input type="email" name="email" id="email" required>
             <label for="password">Password</label>
             <input type="password" name="password" id="password" required>
-            <button type="submit">Login</button>
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm_password" required>
+            <button type="submit">Register</button>
         </form>
     </div>
 </body>
