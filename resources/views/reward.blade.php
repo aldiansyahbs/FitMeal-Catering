@@ -18,6 +18,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .Logo {
@@ -183,6 +184,7 @@
             <li class="navbar-item"><a href="/">Home</a></li>
             <li class="navbar-item"><a href="/catering">Catering</a></li>
             <li class="navbar-item"><a href="/reward">Reward</a></li>
+            <li class="navbar-item"><a href="/review">Review</a></li>
             <li class="navbar-item"><a href="{{ route('cart.show') }}">Keranjang Belanja</a></li>
         </ul>
         <a href="{{route('actionlogout')}}"><i class="fa fa-power-off"></i> Log Out</a>

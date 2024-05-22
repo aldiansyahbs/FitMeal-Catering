@@ -290,6 +290,7 @@
             <li class="navbar-item"><a href="/">Home</a></li>
             <li class="navbar-item"><a href="/catering">Catering</a></li>
             <li class="navbar-item"><a href="/reward">Reward</a></li>
+            <li class="navbar-item"><a href="/review">Review</a></li>
             <li class="navbar-item"><a href="{{ route('cart.show') }}">Keranjang Belanja</a></li>
 
         </ul>

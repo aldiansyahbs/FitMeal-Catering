@@ -16,6 +16,7 @@
             margin: 0;
             padding: 0;
             background-color: #FFFFF5;
+            
         }
 
         .Logo {
@@ -319,6 +320,7 @@
             <li class="navbar-item"><a href="/">Home</a></li>
             <li class="navbar-item"><a href="/catering">Catering</a></li>
             <li class="navbar-item"><a href="/reward">Reward</a></li>
+            <li class="navbar-item"><a href="/review">Review</a></li>
             <li class="navbar-item"><a href="{{ route('cart.show') }}">Keranjang Belanja</a></li>
         </ul>
         <a href="{{route('actionlogout')}}"><i class="fa fa-power-off"></i> Log Out</a>
