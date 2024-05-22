@@ -89,13 +89,14 @@
         }
 
         main {
-            flex: 1;
-            display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
 
+        .upload-wrapper {
+            align-items: center;
+        }
         h1 {
             font-size: 64px;
             margin: 0;
@@ -173,22 +174,27 @@
             <li class="navbar-item"><a href="/">Home</a></li>
             <li class="navbar-item"><a href="/catering">Catering</a></li>
             <li class="navbar-item"><a href="/reward">Reward</a></li>
+            <li class="navbar-item"><a href="{{ route('cart.show') }}">Keranjang Belanja</a></li>
         </ul>
-        <p>Profile</p>
+        <a href="{{route('actionlogout')}}"><i class="fa fa-power-off"></i> Log Out</a>
     </nav>
     <div class="profile">
         <img src="{{ asset('Assets/profile.svg') }}" alt="">
         <div class="name">
-            <h1>Adnan Kiseki</h1>
-            <span>Point : 0/10</span>
+            <h1>{{ Auth::user()->name }}</h1>
+            <span>Point : {{ Auth::user()->point }}/10</span>
         </div>
     </div>
 
     <main>
-        <h1>Unggah Foto Makanan Sehatmu dan Ambillah kupon catering gratismu!</h1>
+        <div class="upload-wrapper">
+            <form action="{{ route('upload.photo') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="photo" required>
+                <button type="submit">Unggah Foto Makananmu</button>
+            </form>
+        </div>
     </main>
-    <button>Unggah Foto Makananmu</button>
-
 
     <footer>
         <div class="top">
@@ -215,9 +221,4 @@
         </div>
         <hr>
         <div class="bottom">
-            <p>© 2021 YukMam! All Rights Reserved</p>
-        </div>
-    </footer>
-</body>
-
-</html>
+            <p>© 2021 YukMam! All Rights Reserved

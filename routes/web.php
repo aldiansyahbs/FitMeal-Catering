@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\RewardController;
 
 Route::get('/catering', function () {
     return view('catering');
@@ -41,3 +42,5 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->middleware('auth');
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+
+Route::post('/upload-photo', [RewardController::class, 'uploadPhoto'])->name('upload.photo');

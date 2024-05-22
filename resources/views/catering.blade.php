@@ -319,9 +319,9 @@
             <li class="navbar-item"><a href="/">Home</a></li>
             <li class="navbar-item"><a href="/catering">Catering</a></li>
             <li class="navbar-item"><a href="/reward">Reward</a></li>
-
+            <li class="navbar-item"><a href="{{ route('cart.show') }}">Keranjang Belanja</a></li>
         </ul>
-        <p>Profile</p>
+        <a href="{{route('actionlogout')}}"><i class="fa fa-power-off"></i> Log Out</a>
     </nav>
 
     <h2><u>Pilih CateringMu!</u> </h2>

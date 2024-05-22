@@ -291,14 +291,16 @@
             <li class="navbar-item"><a href="/catering">Catering</a></li>
             <li class="navbar-item"><a href="/reward">Reward</a></li>
             <li class="navbar-item"><a href="{{ route('cart.show') }}">Keranjang Belanja</a></li>
-            <li><a href="{{route('actionlogout')}}"><i class="fa fa-power-off"></i> Log Out</a></li>
+
         </ul>
-        <p>Profile</p>
+        <a href="{{route('actionlogout')}}"><i class="fa fa-power-off"></i> Log Out</a>
     </nav>
     <div class="HeroItem">
         <div class="heroText">
             <p>Mulai <b>Hidup Sehatmu</b> Dengan Makan <b>Makanan Yang Bergizi!</b></p>
-            <button><b>Pesan Sekarang</b> </button>
+            <a href="/catering">
+                <button><b>Pesan Sekarang</b></button>
+            </a>
         </div>
         <div class="miniCard">
             <img src="{{ asset('Assets/food_1.png') }}" alt="">
