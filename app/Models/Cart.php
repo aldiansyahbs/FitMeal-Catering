@@ -9,6 +9,7 @@ class Cart extends Model
 {
     use HasFactory;
     protected $fillable = ['id_user', 'id_menu', 'kuantitas', 'total_harga'];
+    public $timestamps = false;
 
     public function user()
     {
