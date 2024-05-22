@@ -368,7 +368,9 @@
         <div class="vertical-line"></div>
         <div class="right-section">
             <p><b>Unggah Foto Makananmu, Ambil Kupon Makanan Gratismu!</b></p>
-            <button>Unggah Sekarang</button>
+            <a href="/reward">
+                <button>Unggah Sekarang</button>
+            </a>
         </div>
     </div>
 

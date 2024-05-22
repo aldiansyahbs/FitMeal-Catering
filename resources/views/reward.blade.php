@@ -161,9 +161,18 @@
         .profile .name {
             margin-top: 20px;
         }
+        main h1{
+            font-size:48px;
+            margin-bottom:30px;
+
+        }
     </style>
 </head>
-
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <body>
 
     <nav class="navbar">
@@ -186,7 +195,9 @@
         </div>
     </div>
 
-    <main>
+    <main>            
+        <h1>Unggah Foto Makanan Sehatmu dan ambillah kupon catering gratismu!</h1>
+
         <div class="upload-wrapper">
             <form action="{{ route('upload.photo') }}" method="POST" enctype="multipart/form-data">
                 @csrf
