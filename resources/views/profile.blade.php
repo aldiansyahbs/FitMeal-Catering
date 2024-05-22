@@ -174,7 +174,7 @@
             <li class="navbar-item"><a href="/contact">Reward</a></li>
 
         </ul>
-        <p>Profile</p>
+        <p><a href="">Profile</a></p>
     </nav>
 
 
